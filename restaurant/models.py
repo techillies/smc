@@ -1,5 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
+from django.conf import settings
+from geoposition.fields import GeopositionField
 
 class Cuisine(models.Model):
 	cuisine_name = models.CharField(max_length=200)
@@ -14,10 +16,19 @@ class Location(models.Model):
 	def __unicode__(self):
 		return self.location_name
 
+
+class RestaurantType(models.Model):
+	restaurant_type = models.CharField(max_length=200)
+
+	def __unicode__(self):
+		return self.restaurant_type
+
+
+
 class Restaurant(models.Model):
 	full_name=models.CharField(max_length=200, null=False, primary_key=True)
 	full_address=models.CharField(max_length=255, null=False)
-	contact=models.IntegerField(max_length=20, null=False )
+	contact=models.IntegerField(null=False )
 	website=models.CharField(max_length=200, blank=True, null=True)
 	name_slug = models.SlugField()
 	opening_hours = models.CharField(max_length=50, blank=True, null=True)
@@ -34,11 +45,31 @@ class Restaurant(models.Model):
 	delivery=models.BooleanField(default=False)
 	reservation=models.BooleanField(default=False)
 	catering = models.BooleanField(default=False)
+	cost_for_two = models.IntegerField(null=True)
 
 	# Relational Fields
 
 	cuisines = models.ManyToManyField(Cuisine)
 	location = models.ManyToManyField(Location)
+	rest_type = models.ManyToManyField(RestaurantType)
+
+	geolocation = GeopositionField()
 
 	def __unicode__(self):
 		return self.full_name
+
+
+class Menu(models.Model):
+	menu_name = models.ForeignKey(Restaurant, related_name='menu')
+	menu_image = models.ImageField(upload_to=settings.MEDIA_ROOT)
+
+	def __unicode__(self):
+		return self.menu_image.name
+
+
+class Gallery(models.Model):
+	restaurant_photo_name= models.ForeignKey(Restaurant, related_name='gallery')
+	restaurant_photo = models.ImageField(upload_to=settings.MEDIA_ROOT)
+
+	def __unicode__(self):
+		return self.restaurant_photo.name
