@@ -5,6 +5,7 @@ from geoposition.fields import GeopositionField
 
 class Cuisine(models.Model):
 	cuisine_name = models.CharField(max_length=200)
+	cuisine_slug = models.SlugField(null=True)
 
 	def __unicode__(self):
 		return self.cuisine_name
@@ -12,6 +13,7 @@ class Cuisine(models.Model):
 
 class Location(models.Model):
 	location_name = models.CharField(max_length=200)
+	location_slug = models.SlugField(null=True)
 
 	def __unicode__(self):
 		return self.location_name
@@ -34,6 +36,7 @@ class Restaurant(models.Model):
 	opening_hours = models.CharField(max_length=50, blank=True, null=True)
 	additional_info = models.CharField(max_length=200, blank=True, null=True)
 	history = models.TextField(null=True)
+	cover_photo = models.ImageField(upload_to = settings.MEDIA_ROOT, null=True)
 
 	# Boolean Fields
 

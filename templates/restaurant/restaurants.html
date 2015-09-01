@@ -4,7 +4,7 @@
   <body>
     {% block content %}
 
-    <div class="col-md-12" style="height:50px;"></div>
+    <div class="map-canvas" id="map"></div>
     <div class="row">
       <!--div class="col-md-3 sidebar">
         <h4>FILTERS</h4>
@@ -23,14 +23,50 @@
                       <b>{% for loc in restaurant.location.all %}{{ loc }}{% endfor %}</b>>
                       {{ restaurant.full_address }}
                     </h5>
-                </div>
+                    <h5>
+                      <b>
+                        {% for type in restaurant.rest_type.all %}
+                          {{ type }},
+                        {% endfor %}
+                      </b>
+                      >
+                      {% for cuisines in restaurant.cuisines.all %}
+                        {{ cuisines }},
+                      {% endfor %}
+                    </h5>
+                    <h5>
+                      <b>Cost for two:</b>
+                      {{ restaurant.cost_for_two}}
+                    </h5>
+              </div>
+                <hr>
                 {% endfor %}
       </div>
+      <div class="col-md-3 banner-bar">
+          <h4>SPONSORED</h4>
+      </div>
 
 
       </div>
 
+      <script>
 
+      function initMap() {
+      var glat = 17.3390052;
+      var glong = 76.8399402;
+      var myLatLng = {lat:glat , lng:glong };
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 14,
+      center: myLatLng
+      });
+
+      var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      });
+      }
+      </script>
     {% endblock %}
   </body>
 </html>

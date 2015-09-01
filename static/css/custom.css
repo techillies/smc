@@ -13,6 +13,7 @@
 a {
     text-decoration: none;
 }
+
 body {
     background-color: #f1f1f1;
 }
@@ -27,7 +28,28 @@ h6 {
 .search-bar input[type=text] {
     height: 45px;
 }
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+#map{
+    height:100%;
+}
+
+.map-canvas{
+  height:400px!important;
+  margin-top:-70px;
+  width:100%;
+}
+
+
+
+
 /* Restaurant Page */
+
+
 
 .banner-image-canvas {
     padding: 0px;
@@ -42,6 +64,7 @@ h6 {
     margin-left: auto;
     margin-right: auto;
 }
+
 .restaurant_title {
     font-size: 48px;
     color: #f8f8f8;
@@ -50,12 +73,14 @@ h6 {
 .rest-type {
     margin-left: 30px;
 }
+
 .overlay {
     background: rgba(0, 0, 0, 0.5);
     z-index: -50;
     height: 500px;
     margin-top: -500px;
 }
+
 .sidebar,
 .centre-bar,
 .banner-bar {
@@ -66,4 +91,14 @@ h6 {
 }
 .sidebar {
     background-color: #fafafa;
+}
+
+
+
+.centre-bar a{
+  color:#7f1616;
+}
+
+.centre-bar a:hover{
+  text-decoration:underline;
 }
