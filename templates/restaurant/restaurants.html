@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+<html>
+  <head></head>
+  <body>
+    {% block content %}
+
+    <div class="col-md-12" style="height:50px;"></div>
+    <div class="row">
+      <!--div class="col-md-3 sidebar">
+        <h4>FILTERS</h4>
+      </div-->
+      <div class="col-md-3 sidebar">
+        <h4>FILTERS</h4>
+      </div>
+      <div class="col-md-6 centre-bar">
+                <h2>Restaurants in Gulbarga</h2>
+                <br>
+
+                {% for restaurant in restaurants %}
+                <div class="list-element">
+                    <h3><a href="{{ restaurant.name_slug }}" >{{ restaurant.full_name}}</a></h3>
+                    <h5>
+                      <b>{% for loc in restaurant.location.all %}{{ loc }}{% endfor %}</b>>
+                      {{ restaurant.full_address }}
+                    </h5>
+                </div>
+                {% endfor %}
+      </div>
+
+
+      </div>
+
+
+    {% endblock %}
+  </body>
+</html>

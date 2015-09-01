@@ -12,8 +12,12 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT,}),
 
+    url(r'^$',views.base),
     url(r'^restaurants/$',views.index),
+    url(r'^restaurants/(?P<slug>[\w\-]+)/?$',views.fetch_restaurant),
+
 )
+
 
 
 admin.site.site_header = settings.ADMIN_SITE_HEADER

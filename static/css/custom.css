@@ -1,0 +1,69 @@
+/*
+
+   Custom CSS for Samosa Meets Chai
+   Url : www.samosameetschai.in
+   Author : Pratik Kanthi
+   Base CSS : Twitter-bootstrap
+
+*/
+
+@import url('http://fonts.googleapis.com/css?family=Lato');
+/*Overall */
+
+a {
+    text-decoration: none;
+}
+body {
+    background-color: #f1f1f1;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Lato';
+}
+.search-bar input[type=text] {
+    height: 45px;
+}
+/* Restaurant Page */
+
+.banner-image-canvas {
+    padding: 0px;
+}
+.banner-image {
+    position: relative;
+    width: 100%;
+    z-index: -100;
+    margin-bottom: -200px;
+    margin-top: -200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.restaurant_title {
+    font-size: 48px;
+    color: #f8f8f8;
+    margin-left: 30px;
+}
+.rest-type {
+    margin-left: 30px;
+}
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -50;
+    height: 500px;
+    margin-top: -500px;
+}
+.sidebar,
+.centre-bar,
+.banner-bar {
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 1px 1px 1px #666;
+    font-family: 'Lato';
+}
+.sidebar {
+    background-color: #fafafa;
+}

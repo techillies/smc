@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+<html>
+    <head>
+        <title>{% block title %} {{restaurant.full_name}} {% endblock %}</title>
+    </head>
+
+    <body>
+
+
+    {% block content %}
+
+
+
+        <div class="col-md-12 banner-image-canvas">
+            <img class="banner-image" src="https://d.zmtcdn.com/data/res_imagery/51078_RESTAURANT_b3459cddb6afeafec3057b2c5949be8e.jpg"/>
+            <div class="banner-image overlay"></div>
+        </div>
+
+
+        <h3 class="restaurant_title">{{ restaurant.full_name}}</h3>
+
+        <div class="rest-type">
+    {% for type in restaurant.rest_type.all %}
+        <span class="label label-warning">{{ type }}</span>
+    {% endfor %}
+        </div>
+
+
+        <div class="col-md-12" style="height:50px;"></div>
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-3 sidebar">
+                <b>PHONE NUMBER</b>
+                <p>{{ restaurant.contact }}</p>
+                <b>LOCATION:</b>
+                <p>{{ restaurant.full_address }}</p>
+                <b>CUISINES</b>
+                <p>
+          {% for cuisine in restaurant.cuisines.all %}
+            {{ cuisine }},
+          {% endfor %}
+        </p>
+                <p>
+                    <b>HIGHLIGHTS</b>
+                </p>
+                <p>{% if restaurant.delivery %}
+
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;Home Delivery
+             {% endif %}
+
+                </p>
+                <p>{% if restaurant.air_conditioned %}
+
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;Air Conditioned
+             {% endif %}
+
+                </p>
+            </div>
+            <div class="col-md-6 centre-bar">
+                <div class="row">
+                    <h5>
+                        <b>About</b>
+                    </h5>
+                    <p>{{ restaurant.history }}
+
+
+                    </div>
+                    <div class="row">
+                        <h5>
+                            <b>Menu</b>
+                        </h5>
+            {% for menu in menu_set %}
+
+                        <img src="{{ menu }}" height="30px"/>
+            {% endfor %}
+
+                    </div>
+                    <div class="row">
+                        <h5>
+                            <b>Photos</b>
+                        </h5>
+                    </div>
+                    <div class="row">
+                        <h5>
+                            <b>Write a Review</b>
+                        </h5>
+                    </div>
+                </div>
+                <div class="col-md-3 banner-bar">
+                    <h5>
+                        <b>On Map</b>
+                    </h5>
+                    <div id="map" style="height:300px"></div>
+                    <center>
+                        <br>
+                            <p>
+                                <button type="button" class="btn btn-danger">Get Directions</button>
+                                <p>
+                                    <a href="#">See nearby restaurants</a>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+
+    function initMap() {
+      var glat = {{ restaurant.geolocation.latitude }};
+      var glong = {{ restaurant.geolocation.longitude }};
+      var myLatLng = {lat:glat , lng:glong };
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        center: myLatLng
+      });
+
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+      });
+    }
+    </script>
+    {% endblock %}
+
+
+
+
+                </body>
+            </html>

@@ -1,0 +1,23 @@
+/*
+
+   Custom CSS for Samosa Meets Chai
+   Url : www.samosameetschai.in
+   Author : Pratik Kanthi
+   Base CSS : Twitter-bootstrap
+
+*/
+
+
+/*Overall */
+a{
+  text-decoration:none;
+}
+
+
+
+
+
+/* Restaurant Page */
+.restaurant_title{
+  font-size:48px;
+}
