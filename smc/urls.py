@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^$',views.base),
     url(r'^restaurants/$',views.index),
     url(r'^restaurants/(?P<slug>[\w\-]+)/?$',views.fetch_restaurant),
+    url(r'^comments/', include('django_comments.urls')),
 
 )
 

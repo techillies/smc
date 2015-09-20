@@ -14,13 +14,13 @@
       </div>
       <div class="col-md-6 centre-bar">
                 <h2>Restaurants in Gulbarga</h2>
-                <br>
+                <br/>
 
                 {% for restaurant in restaurants %}
                 <div class="list-element">
                     <h3><a href="{{ restaurant.name_slug }}" >{{ restaurant.full_name}}</a></h3>
                     <h5>
-                      <b>{% for loc in restaurant.location.all %}{{ loc }}{% endfor %}</b>>
+                      <b>{% for loc in restaurant.location.all %}{{ loc }}{% endfor %}</b>
                       {{ restaurant.full_address }}
                     </h5>
                     <h5>
@@ -29,7 +29,7 @@
                           {{ type }},
                         {% endfor %}
                       </b>
-                      >
+                      :
                       {% for cuisines in restaurant.cuisines.all %}
                         {{ cuisines }},
                       {% endfor %}

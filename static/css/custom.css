@@ -44,7 +44,11 @@ html, body {
   width:100%;
 }
 
+/* Index.html/ Homepage */
 
+.home-container{
+    margin-top:100px;
+}
 
 
 /* Restaurant Page */
@@ -88,10 +92,12 @@ html, body {
     background-color: #fff;
     box-shadow: 1px 1px 1px #666;
     font-family: 'Lato';
+    height:1000px;
 }
-.sidebar {
-    background-color: #fafafa;
+.sidebar, .banner-bar {
+    background-color: #f6f6f6;
 }
+
 
 
 
@@ -101,4 +107,11 @@ html, body {
 
 .centre-bar a:hover{
   text-decoration:underline;
+}
+
+.banner-image.home-page{
+    display:inline;
+    position:absolute;
+    margin-left:auto;
+    margin-right:auto;
 }

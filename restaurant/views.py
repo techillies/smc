@@ -14,4 +14,5 @@ def index(request):
 def fetch_restaurant(request,slug):
     buff = Restaurant.objects.get(name_slug=slug)
     menu = buff.menu.all()
-    return render_to_response("restaurant.html", {"restaurant":buff,"menu_set":menu},)
+    photos = buff.gallery.all()
+    return render_to_response("restaurant.html", {"restaurant":buff,"menu_set":menu,"photo_set":photos},)

@@ -26,18 +26,21 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 ADMIN_SITE_HEADER = "Samosa Meets Chai - Administration"
+SITE_ID = 1
 
 # Application definition
 
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'restaurant',
     'geoposition',
+    'django_comments',
 )
 
 MIDDLEWARE_CLASSES = (
