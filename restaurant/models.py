@@ -1,7 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.conf import settings
-from geoposition.fields import GeopositionField
 
 class Cuisine(models.Model):
 	cuisine_name = models.CharField(max_length=200)
@@ -28,7 +27,7 @@ class RestaurantType(models.Model):
 
 
 class Restaurant(models.Model):
-	full_name=models.CharField(max_length=200, null=False, primary_key=True)
+	full_name=models.CharField(max_length=200, null=False)
 	full_address=models.CharField(max_length=255, null=False)
 	contact=models.IntegerField(null=False )
 	website=models.CharField(max_length=200, blank=True, null=True)
@@ -56,8 +55,6 @@ class Restaurant(models.Model):
 	location = models.ManyToManyField(Location)
 	rest_type = models.ManyToManyField(RestaurantType)
 
-	geolocation = GeopositionField()
-
 	def __unicode__(self):
 		return self.full_name
 
@@ -76,3 +73,4 @@ class Gallery(models.Model):
 
 	def __unicode__(self):
 		return self.restaurant_photo.name
+

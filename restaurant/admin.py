@@ -11,7 +11,10 @@ class GalleryImageInline(admin.TabularInline):
 	extra = 3
 
 class RestaurantAdmin(admin.ModelAdmin):
+	change_list_filter_template = "admin/filter_listing.html"
+	change_list_template = "admin/change_list_filter_sidebar.html"
 	prepopulated_fields = {'name_slug':('full_name',),}
+	list_filter = ("full_name","website")
 	inlines = [MenuImageInline ,GalleryImageInline ,]
 
 class MyModelAdmin(admin.ModelAdmin):
