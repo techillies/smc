@@ -16,7 +16,7 @@
                 <h2>Restaurants in Gulbarga</h2>
                 <br/>
 
-                {% for restaurant in restaurants %}
+                {% for restaurant in object_list %}
                 <div class="list-element">
                     <h3><a href="{{ restaurant.name_slug }}" >{{ restaurant.full_name}}</a></h3>
                     <h5>
