@@ -21,9 +21,6 @@ SECRET_KEY = 's4@5)r82d@4u&)is(_)q_reak29j=0+wx#478a*kd-zk8wo-ex'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-TEMPLATE_DEBUG = True
-
 ALLOWED_HOSTS = []
 ADMIN_SITE_HEADER = "Samosa Meets Chai - Administration"
 SITE_ID = 1
@@ -93,8 +90,9 @@ STATIC_ROOT = os.path.join(BASE_DIR,"staticroot")
 
 # Media files (Uploaded)
 
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

@@ -31,7 +31,7 @@ class Restaurant(models.Model):
 	full_address=models.CharField(max_length=255, null=False)
 	contact=models.IntegerField(null=False )
 	website=models.CharField(max_length=200, blank=True, null=True)
-	name_slug = models.SlugField()
+	name_slug = models.SlugField(primary_key=True)
 	opening_hours = models.CharField(max_length=50, blank=True, null=True)
 	additional_info = models.CharField(max_length=200, blank=True, null=True)
 	history = models.TextField(null=True)
