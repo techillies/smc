@@ -1,12 +1,70 @@
 {% extends "base.html" %}
 <html>
-  <head>
-    <title>{% block title %}SMC - Home{% endblock %}</title>
-  </head>
 
-  <body>
-    {% block content %}
+<head>
+  <title>{% block title %}SMC - Home{% endblock %}</title>
+</head>
 
-    {% endblock %}
-  </body>
+<body>
+  {% block content %}
+  <div class="content col-md-12">
+    <section class="container content-wrapper">
+      <h2 class="str-chat-heading">Street Chats!</h2>
+      <p>Enjoy and explore the best street chats of kalburgi</p>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="ui cards">
+            <a class="link-to-card" href="#">
+              <div class="row">
+                <div class="col-md-5 card clearfix">
+                  <div class="col-md-4  col-xs-4  str-chat-img">
+                    <img src="/static/tomato.jpg" width="100" height="100" />
+                  </div>
+                  <div class="col-md-8 col-xs-8 str-chat-content">
+                    <h4>Mahadev Panipuri!</h4>
+                    <p>Mahandev Pnainpuri is one of the famous chat center in gulbarga!
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-5 card clearfix">
+                  <div class="col-md-4  col-xs-4  str-chat-img">
+                    <img src="/static/tomato.jpg" width="100" height="100" />
+                  </div>
+                  <div class="col-md-8 col-xs-8 str-chat-content">
+                    <h4>Mahadev Panipuri!</h4>
+                    <p>Mahandev Pnainpuri is one of the famous chat center in gulbarga!
+                    </p>
+                  </div>
+                </div>
+                 <div class="col-md-5 card clearfix">
+                  <div class="col-md-4 col-xs-4 str-chat-img">
+                    <img src="/static/tomato.jpg" class="img-responsive"  />
+                  </div>
+                  <div class="col-md-8 col-xs-8 str-chat-content">
+                    <h4>Mahadev Panipuri!</h4>
+                    <p>Mahandev Pnainpuri is one of the famous chat center in gulbarga!
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-5 card clearfix">
+                  <div class="col-md-4  col-xs-4 str-chat-img">
+                    <img src="/static/tomato.jpg" class="img-responsive" />
+                  </div>
+                  <div class="col-md-8 col-xs-8 str-chat-content">
+                    <h4>Mahadev Panipuri!</h4>
+                    <p>Mahandev Pnainpuri is one of the famous chat center in gulbarga!
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  {% endblock %}
+</body>
+
 </html>
