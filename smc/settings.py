@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'restaurant',
+    'geoposition',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -115,3 +116,6 @@ TEMPLATES = [
         },
     },
 ]
+
+
+GEOPOSITION_GOOGLE_MAPS_API_KEY = "AIzaSyDeROcTd0Alwf0MC477B3q5cQgWfM2PwiY"

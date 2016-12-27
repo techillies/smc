@@ -1,6 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.conf import settings
+from geoposition.fields import GeopositionField
 
 class Cuisine(models.Model):
 	cuisine_name = models.CharField(max_length=200)
@@ -36,7 +37,7 @@ class Restaurant(models.Model):
 	additional_info = models.CharField(max_length=200, blank=True, null=True)
 	history = models.TextField(null=True)
 	cover_photo = models.ImageField(upload_to = settings.MEDIA_ROOT, null=True)
-
+	geolocation = GeopositionField()
 	# Boolean Fields
 
 	serves_alcohol=models.BooleanField(default=False)
